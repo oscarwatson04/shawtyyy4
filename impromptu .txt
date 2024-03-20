@@ -1,7 +1,5 @@
 
 -----------------------------------------------------------------------------
-
-
 PRACTICAL  2
 Part 1 : Aim : Use Cryptool to encrypt and decrypt passwords using RC4 algorithm
 
@@ -95,6 +93,31 @@ v. ACK Scan
 Other scans :
      ● nmap -T4 -A -v <ip address of another device>
      ● nmap -p 21,80,443 <website name>
+-----------------------------------------------------------------------------
+To perform a scan with Nmap to check the ACK, SYN, etc. and get the number of nodes, you can use the following command:
+php
+Copy code
+nmap -sS -sA -sn <target>
+Here's what each option does:
+-sS: Performs a SYN scan (checks if the port is open by sending a SYN packet).
+-sA: Performs an ACK scan (checks if the port is filtered by sending an ACK packet).
+-sn: Disables port scanning and only performs host discovery.
+Replace <target> with the target IP address or hostname you want to scan.
+-----------------------------------------------------------------------------
+To obtain the number of nodes discovered during the scan, you can add the -v option for verbose output. Here's the modified command:
+nmap -sS -sA -sn -v 192.168.1.0/24
+With the -v option, Nmap will display verbose output, including information about the number of nodes discovered during the scan. Adjust the IP range as needed for your network.
+-----------------------------------------------------------------------------------
+the steps to perform a basic Nmap scan on TryHackMe:
+1. *Access TryHackMe:* Log in and select the room or machine you want to scan.
+2. *Identify Target:* Find the target's IP address or hostname.
+3. *Open Terminal:* Open a terminal or command prompt.
+4. *Run Nmap Scan:* Execute nmap -Pn -T4 <target> replacing <target> with the target's IP or hostname.
+5. *Review Results:* Analyze the scan results for open ports and services.
+6. *Further Analysis:* Optionally, perform more detailed scans for service version detection, OS detection, or vulnerabilities.
+7. *Document Findings:* Keep track of any vulnerabilities or interesting findings.
+8. *Take Action:* Depending on your goals, exploit vulnerabilities, patch systems, or report findings.
+Always ensure you have proper authorization before scanning any network or system.
 
 -----------------------------------------------------------------------------
    
